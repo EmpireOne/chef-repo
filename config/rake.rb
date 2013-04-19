@@ -6,22 +6,22 @@
 ###
 
 # The company name - used for SSL certificates, and in srvious other places
-COMPANY_NAME = "Example Com"
+COMPANY_NAME = "The EmpireOne Group P/L"
 
 # The Country Name to use for SSL Certificates
-SSL_COUNTRY_NAME = "US"
+SSL_COUNTRY_NAME = "AU"
 
 # The State Name to use for SSL Certificates
-SSL_STATE_NAME = "Several"
+SSL_STATE_NAME = "New South Wales"
 
 # The Locality Name for SSL - typically, the city
-SSL_LOCALITY_NAME = "Locality"
+SSL_LOCALITY_NAME = "Sydney"
 
 # What department?
-SSL_ORGANIZATIONAL_UNIT_NAME = "Operations"
+SSL_ORGANIZATIONAL_UNIT_NAME = "DevOps"
 
 # The SSL contact email address
-SSL_EMAIL_ADDRESS = "ops@example.com"
+SSL_EMAIL_ADDRESS = "sysadmin@empireone.com.au"
 
 # License for new Cookbooks
 # Can be :apachev2 or :none
