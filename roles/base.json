@@ -8,25 +8,32 @@
   "default_attributes": {
   	"ntp": { "servers" : [ "pool.ntp.org" ] },
   	"tz": "Australia/Sydney",
-  	"users": [ "e1asssdasda","adadsa" ]
+  	"authorization" : {
+  		"sudo": {
+  			"groups": [ "sysadmin", "wheel", "sudoer" ],
+  			"users": [ "vagrant", "e1" ],
+  			"passwordless": "true"
+  		}
+  	}
   },
 
 
   "override_attributes": {
   },
   
+  "env_run_list": {
+  },
 
   "run_list": [
     // "recipe[omnibus_updater]",
-    "recipe[users]",
+		"recipe[users::e1]",
+		"recipe[sudo]",
+		"recipe[yum]",
     "recipe[git]",
     "recipe[build-essential]",
     "recipe[openssh]",
 		"recipe[logwatch]", // dev?
 		"recipe[logrotate]", // dev?
-    /*     
-"recipe[sudo]",
-    */
     "recipe[ntp]",
     "recipe[timezone-ii]"
   ]

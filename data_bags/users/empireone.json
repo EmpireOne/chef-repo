@@ -1,7 +1,7 @@
-sd {
-	"id" : "e1",
+{
+	"id" : "empireone",
 	"password" : "$1$lHt78UqX$0xqu1l0ILCMGjBuokLBuA1",
-	"groups": [ "sysadmin" ],
+	"groups": [ "sysadmin", "sudoer" ],
 	"ssh_keys": [
 
 	]

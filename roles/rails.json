@@ -1,0 +1,24 @@
+{
+	"name": "rails",
+	"description": "Rails server config - EmpireOne Group",
+	"json_class": "Chef::Role",
+	"chef_type": "role",
+
+	"default_attributes": {
+		"nginx" : {
+			"init_style" : "init"
+		}
+	},
+
+	"override_attributes": {
+	},
+
+	"env_run_list": {
+	},
+
+	"run_list": [
+		"role[base]",
+		"recipe[ohai]",
+	  "recipe[nginx]"
+	]
+}

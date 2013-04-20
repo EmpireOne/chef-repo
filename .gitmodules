@@ -31,3 +31,15 @@
 [submodule "cookbooks/perl"]
 	path = cookbooks/perl
 	url = https://github.com/opscode-cookbooks/perl
+[submodule "cookbooks/cron"]
+	path = cookbooks/cron
+	url = https://github.com/opscode-cookbooks/cron
+[submodule "cookbooks/nginx"]
+	path = cookbooks/nginx
+	url = https://github.com/opscode-cookbooks/nginx
+[submodule "cookbooks/ohai"]
+	path = cookbooks/ohai
+	url = http://github.com/opscode-cookbooks/ohai
+[submodule "cookbooks/yum"]
+	path = cookbooks/yum
+	url = http://github.com/opscode-cookbooks/yum
