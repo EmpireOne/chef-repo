@@ -1,0 +1,8 @@
+sd {
+	"id" : "e1",
+	"password" : "$1$lHt78UqX$0xqu1l0ILCMGjBuokLBuA1",
+	"groups": [ "sysadmin" ],
+	"ssh_keys": [
+
+	]
+}

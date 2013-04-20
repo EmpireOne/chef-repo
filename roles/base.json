@@ -1,0 +1,33 @@
+{
+  "name": "base",
+  "description": "Base server config - EmpireOne Group",
+  "json_class": "Chef::Role",
+	"chef_type": "role",
+
+
+  "default_attributes": {
+  	"ntp": { "servers" : [ "pool.ntp.org" ] },
+  	"tz": "Australia/Sydney",
+  	"users": [ "e1asssdasda","adadsa" ]
+  },
+
+
+  "override_attributes": {
+  },
+  
+
+  "run_list": [
+    // "recipe[omnibus_updater]",
+    "recipe[users]",
+    "recipe[git]",
+    "recipe[build-essential]",
+    "recipe[openssh]",
+		"recipe[logwatch]", // dev?
+		"recipe[logrotate]", // dev?
+    /*     
+"recipe[sudo]",
+    */
+    "recipe[ntp]",
+    "recipe[timezone-ii]"
+  ]
+}

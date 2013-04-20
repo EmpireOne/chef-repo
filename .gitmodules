@@ -4,3 +4,30 @@
 [submodule "cookbooks/timezone-ii"]
 	path = cookbooks/timezone-ii
 	url = https://github.com/L2G/timezone-ii.git
+[submodule "cookbooks/sudo"]
+	path = cookbooks/sudo
+	url = https://github.com/opscode-cookbooks/sudo.git
+[submodule "cookbooks/git"]
+	path = cookbooks/git
+	url = https://github.com/opscode-cookbooks/git
+[submodule "cookbooks/users"]
+	path = cookbooks/users
+	url = https://github.com/opscode-cookbooks/users
+[submodule "cookbooks/ntp"]
+	path = cookbooks/ntp
+	url = https://github.com/opscode-cookbooks/ntp
+[submodule "cookbooks/logwatch"]
+	path = cookbooks/logwatch
+	url = https://github.com/opscode-cookbooks/logwatch
+[submodule "cookbooks/logrotate"]
+	path = cookbooks/logrotate
+	url = https://github.com/opscode-cookbooks/logrotate
+[submodule "cookbooks/openssh"]
+	path = cookbooks/openssh
+	url = https://github.com/opscode-cookbooks/openssh
+[submodule "cookbooks/build-essential"]
+	path = cookbooks/build-essential
+	url = https://github.com/opscode-cookbooks/build-essential
+[submodule "cookbooks/perl"]
+	path = cookbooks/perl
+	url = https://github.com/opscode-cookbooks/perl
