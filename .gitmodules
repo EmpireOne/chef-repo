@@ -1,0 +1,6 @@
+[submodule "cookbooks/omnibus_updater"]
+	path = cookbooks/omnibus_updater
+	url = https://github.com/hw-cookbooks/omnibus_updater.git
+[submodule "cookbooks/timezone-ii"]
+	path = cookbooks/timezone-ii
+	url = https://github.com/L2G/timezone-ii.git
