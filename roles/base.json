@@ -32,6 +32,7 @@
     "recipe[git]",
     "recipe[build-essential]",
     "recipe[openssh]",
+    "recipe[iptables::disabled]", //should be dev only
 		"recipe[logwatch]", // dev?
 		"recipe[logrotate]", // dev?
     "recipe[ntp]",
