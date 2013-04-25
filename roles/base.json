@@ -1,6 +1,6 @@
 {
   "name": "base",
-  "description": "Base server config - EmpireOne Group",
+  "description": "Base server configuration - EmpireOne Group (Applies to ALL servers)",
   "json_class": "Chef::Role",
 	"chef_type": "role",
 
@@ -11,7 +11,7 @@
   	"authorization" : {
   		"sudo": {
   			"groups": [ "sysadmin", "wheel", "sudoer" ],
-  			"users": [ "vagrant", "e1" ],
+  			"users": [ "vagrant" ],
   			"passwordless": "true"
   		}
   	}
@@ -25,17 +25,18 @@
   },
 
   "run_list": [
-    // "recipe[omnibus_updater]",
-		"recipe[users::e1]",
-		"recipe[sudo]",
-		"recipe[yum]",
-    "recipe[git]",
-    "recipe[build-essential]",
-    "recipe[openssh]",
-    "recipe[iptables::disabled]", //should be dev only
-		"recipe[logwatch]", // dev?
-		"recipe[logrotate]", // dev?
-    "recipe[ntp]",
-    "recipe[timezone-ii]"
+    "recipe[omnibus_updater]",    // allows to update chef-solo to latest version
+    //"recipe[chef-solo-search]",   // required by recipe[users]
+		"recipe[users::e1]",          // creates users required by EmpireOne
+		"recipe[sudo]",               // configures sudo (see default_attributes)
+    "recipe[openssh]",            // configures ssh daemon
+		"recipe[yum]",                // configures yum
+    "recipe[git]",                // installs git onto the machine (required for pulling EmpireOne ssh keys)
+    "recipe[build-essential]",    // ?? might be removed, required by just about anything, but not explicitly here 
+    "recipe[iptables::disabled]", // ?? should be dev only
+		"recipe[logwatch]",           // ?? not required on dev?
+		"recipe[logrotate]",          // ?? not required on dev?
+    "recipe[ntp]",                // ensures the server time is kept up-to-date
+    "recipe[timezone-ii]"         // configures the server timezone (see default_attributes)
   ]
 }

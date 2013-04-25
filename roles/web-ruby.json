@@ -1,6 +1,6 @@
 {
-	"name": "rails",
-	"description": "Rails server config - EmpireOne Group",
+	"name": "web-ruby",
+	"description": "Ruby (Rails) web server configuration (via nginx) - EmpireOne Group",
 	"json_class": "Chef::Role",
 	"chef_type": "role",
 
@@ -18,7 +18,6 @@
 
 	"run_list": [
 		"role[base]",
-		"recipe[ohai]",
-	  "recipe[nginx]"
+	  	"recipe[nginx]"
 	]
 }

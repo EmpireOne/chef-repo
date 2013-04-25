@@ -1,0 +1,24 @@
+{
+	"name": "idx-solr",
+	"description": "Solr indexing/search engine configuration (via Jetty) - EmpireOne Group.",
+	"json_class": "Chef::Role",
+	"chef_type": "role",
+
+	"default_attributes": {
+		
+	},
+
+	"override_attributes": {
+	},
+
+	"env_run_list": {
+	},
+
+	"run_list": [
+		"role[base]",
+		"recipe[openssl]",		// required by jetty, just being explicit
+		"recipe[java]",			// required by jetty, just being explicit
+		"recipe[jpackage]",		// required by jetty, just being explicit
+		"recipe[jetty]"
+	]
+}

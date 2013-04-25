@@ -1,0 +1,21 @@
+{
+	"name": "web-php",
+	"description": "PHP (cake) web server configuration (via Apache) - EmpireOne Group",
+	"json_class": "Chef::Role",
+	"chef_type": "role",
+
+	"default_attributes": {
+		
+	},
+
+	"override_attributes": {
+	},
+
+	"env_run_list": {
+	},
+
+	"run_list": [
+		"role[base]",
+		"recipe[apache2]"
+	]
+}

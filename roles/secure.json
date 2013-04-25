@@ -1,0 +1,19 @@
+{
+	"name": "secure",
+	"description": "Security configuration for various environments - EmpireOne Group",
+	"json_class": "Chef::Role",
+	"chef_type": "role",
+
+	"default_attributes": {
+	},
+
+	"override_attributes": {
+	},
+
+	"env_run_list": {
+	},
+
+	"run_list": [
+		"role[base]"
+	]
+}
