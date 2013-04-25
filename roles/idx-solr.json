@@ -16,9 +16,7 @@
 
 	"run_list": [
 		"role[base]",
-		"recipe[openssl]",		// required by jetty, just being explicit
-		"recipe[java]",			// required by jetty, just being explicit
-		"recipe[jpackage]",		// required by jetty, just being explicit
-		"recipe[jetty]"
+		//"recipe[openssl]",		// required by jetty, just being explicit
+		//"recipe[jetty]"
 	]
 }

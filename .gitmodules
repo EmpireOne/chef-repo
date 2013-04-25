@@ -58,12 +58,6 @@
 [submodule "cookbooks/java"]
 	path = cookbooks/java
 	url = https://github.com/opscode-cookbooks/java.git
-[submodule "cookbooks/jetty"]
-	path = cookbooks/jetty
-	url = https://github.com/opscode-cookbooks/jetty.git
-[submodule "cookbooks/jpackage"]
-	path = cookbooks/jpackage
-	url = https://github.com/opscode-cookbooks/jpackage.git
 [submodule "cookbooks/openssl"]
 	path = cookbooks/openssl
 	url = https://github.com/opscode-cookbooks/openssl.git
