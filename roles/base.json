@@ -33,7 +33,7 @@
 		"recipe[yum]",                // configures yum
     "recipe[git]",                // installs git onto the machine (required for pulling EmpireOne ssh keys)
     "recipe[build-essential]",    // ?? might be removed, required by just about anything, but not explicitly here 
-    "recipe[iptables::disabled]", // ?? should be dev only
+    "recipe[iptables::disabled]",           // ?? should be dev only
 		"recipe[logwatch]",           // ?? not required on dev?
 		"recipe[logrotate]",          // ?? not required on dev?
     "recipe[ntp]",                // ensures the server time is kept up-to-date

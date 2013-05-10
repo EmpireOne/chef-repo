@@ -4,11 +4,14 @@
 	"json_class": "Chef::Role",
 	"chef_type": "role",
 
-	"default_attributes": {
-		
+	"dsefault_attributes": {
+		"apache" : {
+    		"default_modules" : [ "php5", "ssl" ]
+  		}
 	},
 
 	"override_attributes": {
+
 	},
 
 	"env_run_list": {
@@ -16,6 +19,7 @@
 
 	"run_list": [
 		"role[base]",
+		"recipe[php]",
 		"recipe[apache2]"
 	]
 }

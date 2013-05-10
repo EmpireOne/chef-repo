@@ -5,7 +5,13 @@
 	"chef_type": "role",
 
 	"default_attributes": {
-		
+		"mysql" : {
+			"remove_anonymous_users" : true
+		/*	"server_root_password" : "seb",
+			"server_repl_password": "seb",
+    	"server_debian_password": "seb"
+    	*/
+		}
 	},
 
 	"override_attributes": {
@@ -16,6 +22,6 @@
 
 	"run_list": [
 		"role[base]",
-		"recipe[mysql]"
+		"recipe[mysql::server]"
 	]
 }
