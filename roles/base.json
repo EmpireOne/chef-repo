@@ -25,7 +25,7 @@
   },
 
   "run_list": [
-    "recipe[omnibus_updater]",    // allows to update chef-solo to latest version
+    //"recipe[omnibus_updater]",    // allows to update chef-solo to latest version
     //"recipe[chef-solo-search]",   // required by recipe[users]
 		"recipe[users::e1]",          // creates users required by EmpireOne
 		"recipe[sudo]",               // configures sudo (see default_attributes)
