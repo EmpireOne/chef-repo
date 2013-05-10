@@ -64,3 +64,9 @@
 [submodule "cookbooks/application"]
 	path = cookbooks/application
 	url = https://github.com/opscode-cookbooks/application
+[submodule "cookbooks/database"]
+	path = cookbooks/database
+	url = https://github.com/opscode-cookbooks/database
+[submodule "cookbooks/phpmyadmin"]
+	path = cookbooks/phpmyadmin
+	url = git://github.com/priestjim/chef-phpmyadmin.git
