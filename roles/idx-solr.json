@@ -15,8 +15,8 @@
 	},
 
 	"run_list": [
-		"role[base]",
+		//"role[base]",
 		//"recipe[openssl]",		// required by jetty, just being explicit
-		//"recipe[jetty]"
+		"recipe[jetty]"
 	]
 }
