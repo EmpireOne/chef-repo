@@ -37,7 +37,6 @@ if !!node['empireone_web']['db_setup'] == true
 	  connection conn_info
 		provider Chef::Provider::Database::Mysql
 	  sql { "UPDATE #{node['empireone_web']['db_name']}.#{node['empireone_web']['db_prefix']}options set option_value = 'http://#{node['empireone_web']['domain']}' WHERE option_name in ('home','siteurl')" }
-	  #sql { "SELECT 1" }
 	  action :query
 	end
 
