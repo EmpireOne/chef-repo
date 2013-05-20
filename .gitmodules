@@ -70,3 +70,6 @@
 [submodule "cookbooks/phpmyadmin"]
 	path = cookbooks/phpmyadmin
 	url = git://github.com/priestjim/chef-phpmyadmin.git
+[submodule "cookbooks/jetty"]
+	path = cookbooks/jetty
+	url = https://github.com/opscode-cookbooks/jetty.git
