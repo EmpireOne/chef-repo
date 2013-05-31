@@ -73,9 +73,9 @@
 [submodule "cookbooks/jetty"]
 	path = cookbooks/jetty
 	url = https://github.com/opscode-cookbooks/jetty.git
-[submodule "cookbooks/chef-rvm"]
-	path = cookbooks/rvm
-	url = https://github.com/fnichol/chef-rvm.git
 [submodule "cookbooks/jpackage"]
 	path = cookbooks/jpackage
 	url = https://github.com/opscode-cookbooks/jpackage.git
+[submodule "cookbooks/rvm"]
+	path = cookbooks/rvm
+	url = https://github.com/fnichol/chef-rvm.git
