@@ -35,7 +35,7 @@ end
 execute 'rake tasks engineroom' do
   cwd "/vagrant_data/src/engineroom/"
   # path ["/usr/local/rvm/gems/ruby-1.9.3-p327@global/bin","/usr/bin"]
-  command "rake db:migrate"
+  command "/usr/local/rvm/gems/ruby-1.9.3-p327/bin/bundle exec rake db:migrate"
            
 end
 
