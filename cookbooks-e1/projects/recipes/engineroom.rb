@@ -19,29 +19,29 @@ end
 
 # Add the bundler package (even though it was added as part of the rvm[system]"
 execute 'bundle install' do
-  command "gem install bundler"
+  command "sudo gem install bundler"
   not_if do
-    File.exists?("/usr/local/rvm/gems/ruby-1.9.3-p327/bin/bundle")
+    File.exists?("/usr/local/rvm/gems/ruby-1.9.3-p392/bin/bundle")
   end
 end
 
 execute 'bundle install engineroom' do
   cwd "/vagrant_data/src/engineroom/"
-  # path ["/usr/local/rvm/gems/ruby-1.9.3-p327@global/bin","/usr/bin"]
-  command "/usr/local/rvm/gems/ruby-1.9.3-p327/bin/bundle install"
+  # path ["/usr/local/rvm/gems/ruby-1.9.3-p392@global/bin","/usr/bin"]
+  command "/usr/local/rvm/gems/ruby-1.9.3-p392/bin/bundle install"
            
 end
 
 execute 'rake tasks engineroom' do
   cwd "/vagrant_data/src/engineroom/"
-  # path ["/usr/local/rvm/gems/ruby-1.9.3-p327@global/bin","/usr/bin"]
-  command "/usr/local/rvm/gems/ruby-1.9.3-p327/bin/bundle exec rake db:migrate"
+  # path ["/usr/local/rvm/gems/ruby-1.9.3-p392@global/bin","/usr/bin"]
+  command "/usr/local/rvm/gems/ruby-1.9.3-p392/bin/bundle exec rake db:migrate"
            
 end
 
 execute 'bundle install rails_admin' do
   cwd "/vagrant_data/src/engineroom/"
-  command "/usr/local/rvm/gems/ruby-1.9.3-p327/bin/bundle install --path vendor/gems/e1_rails"       
+  command "/usr/local/rvm/gems/ruby-1.9.3-p392/bin/bundle install --path vendor/gems/e1_rails"       
 end
 
 execute 'install thin' do
@@ -73,13 +73,13 @@ execute 'make site available' do
   end   
 end
 
-execute 'start up the thin web server' do
-  cwd "/vagrant_data/src/engineroom/"
-  command "/usr/local/rvm/gems/ruby-1.9.3-p327/bin/bundle exec /etc/rc.d/thin start" 
-  not_if do
-    File.exists?("/vagrant_data/src/engineroom/tmp/pids/thin.3000.pid" && "/vagrant_data/src/engineroom/tmp/pids/thin.3001.pid" ) 
-  end
-end
+# execute 'start up the thin web server' do
+  # cwd "/vagrant_data/src/engineroom/"
+  # command "/usr/local/rvm/gems/ruby-1.9.3-p392@global/bin/bundle exec /etc/rc.d/thin start" 
+  # not_if do
+    # File.exists?("/vagrant_data/src/engineroom/tmp/pids/thin.3000.pid" && "/vagrant_data/src/engineroom/tmp/pids/thin.3001.pid" ) 
+  # end
+# end
 
 
 execute 'restart nginx' do

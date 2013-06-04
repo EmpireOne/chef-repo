@@ -76,3 +76,6 @@
 [submodule "cookbooks/rvm"]
 	path = cookbooks/rvm
 	url = https://github.com/fnichol/chef-rvm.git
+[submodule "cookbooks/solr"]
+	path = cookbooks/solr
+	url = https://github.com/fred/solr-jetty-chef.git
