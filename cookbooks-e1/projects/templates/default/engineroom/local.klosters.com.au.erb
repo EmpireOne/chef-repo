@@ -1,0 +1,92 @@
+
+upstream railsdomain {
+        server 127.0.0.1:3000;
+        #server 127.0.0.1:3001;
+        #server 127.0.0.1:3002;
+}
+
+server {
+        listen 80;
+        server_name local.klosters.com.au;
+        access_log /vagrant_data/src/engineroom/log/access.log;
+        error_log /vagrant_data/src/engineroom/log/error.log;
+
+        root /vagrant_data/src/engineroom;
+
+        location / {
+			proxy_set_header  X-Real-IP  $remote_addr;
+			proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+			proxy_set_header Host $http_host;
+			proxy_redirect off;
+
+			if (!-f $request_filename) {
+					proxy_pass http://railsdomain;
+					break;
+			}
+        }
+}
+
+server {
+        listen 80;
+        server_name local.klostersford.com.au;
+        access_log /vagrant_data/src/engineroom/log/access.log;
+        error_log /vagrant_data/src/engineroom/log/error.log;
+
+        root /vagrant_data/src/engineroom;
+
+        location / {
+			proxy_set_header  X-Real-IP  $remote_addr;
+			proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+			proxy_set_header Host $http_host;
+			proxy_redirect off;
+
+			if (!-f $request_filename) {
+					proxy_pass http://railsdomain;
+					break;
+			}
+        }
+}		
+
+server {
+        listen 80;
+        server_name local.klostersvolkswagen.com.au;
+        access_log /vagrant_data/src/engineroom/log/access.log;
+        error_log /vagrant_data/src/engineroom/log/error.log;
+
+        root /vagrant_data/src/engineroom;
+
+        location / {
+			proxy_set_header  X-Real-IP  $remote_addr;
+			proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+			proxy_set_header Host $http_host;
+			proxy_redirect off;
+
+			if (!-f $request_filename) {
+					proxy_pass http://railsdomain;
+					break;
+			}
+        }
+}						
+
+
+
+server {
+        listen 80;
+        server_name local.lakevolkswagen.com.au;
+        access_log /vagrant_data/src/engineroom/log/access.log;
+        error_log /vagrant_data/src/engineroom/log/error.log;
+
+        root /vagrant_data/src/engineroom;
+
+        location / {
+			proxy_set_header  X-Real-IP  $remote_addr;
+			proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+			proxy_set_header Host $http_host;
+			proxy_redirect off;
+
+			if (!-f $request_filename) {
+					proxy_pass http://railsdomain;
+					break;
+			}
+        }
+}											
