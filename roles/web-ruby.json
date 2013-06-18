@@ -24,6 +24,9 @@
 		"rvm" : {
 			"default_ruby" : "ruby-1.9.3-p392",
 			"user_default_ruby" : "ruby-1.9.3-p392"
+		},
+		"solr": {
+			"version": "4.3.0"
 		}
 	},
 	
@@ -34,11 +37,15 @@
 	"env_run_list": {
 	},
 
+
 	"run_list": [
 		"role[base]",
 		"recipe[mysql::server]",
 		"recipe[nginx]",
 		"recipe[rvm::system]",
-		"recipe[jpackage]"
+		"recipe[java]"
+		//"recipe[jpackage]"//,
+		//"recipe[solr]",
+		//"recipe[solr::jetty]"
 	]
 }
