@@ -37,6 +37,7 @@
 		"recipe[logwatch]",           // ?? not required on dev?
 		"recipe[logrotate]",          // ?? not required on dev?
     "recipe[ntp]",                // ensures the server time is kept up-to-date
-    "recipe[timezone-ii]"         // configures the server timezone (see default_attributes)
+    "recipe[timezone-ii]",         // configures the server timezone (see default_attributes)
+	"recipe[cron]"         // configures the server timezone (see default_attributes)
   ]
 }
