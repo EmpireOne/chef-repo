@@ -1,3 +1,4 @@
+package "ImageMagick"
 
 if !!node['engineroom']['db_setup'] == true
 	# chef uses the mysql gem to run commands
@@ -8,13 +9,15 @@ if !!node['engineroom']['db_setup'] == true
 	conn_info = { :host => 'localhost', :username => 'root', :password => '' }
 
 	# query a database from a sql script on disk
-	database 'klosters_d' do
+	mysql_database 'klosters_d' do
 		connection conn_info
 		provider Chef::Provider::Database::Mysql
 		action :create
 	end
 
 end
+
+
 
 # execute 'ssh_keys empireone' do
   # command %Q{
@@ -29,7 +32,7 @@ end
 # end
 
 remote_file '/home/vagrant/.ssh/id_rsa' do
-  source 'http://deploy:zaqq1590@chef.empireone.com.au/id_rsa'
+  source 'https://dl.dropboxusercontent.com/s/7s09htg6mlhjgxf/id_rsa'
   mode 00700
   not_if do
     File.exists?("/home/vagrant/.ssh/id_rsa")
@@ -43,6 +46,15 @@ end
 cookbook_file "/usr/local/sshwrapper/wrap-ssh4git.sh" do
   source "wrap-ssh4git.sh"
   mode 00700
+end
+
+
+directory "/vagrant_data/src" do
+  owner 'vagrant'
+  group 'vagrant'
+  mode 00700
+  recursive true
+  action :create
 end
 
 git '/vagrant_data/src/engineroom/' do
@@ -83,7 +95,7 @@ end
  
  #command "bundle install"
 #end
- rvm_shell "Bundle install and assets precompile" do
+ rvm_shell "Bundle install" do
 	ruby_string "ruby-1.9.3-p392@global"
 	cwd "/vagrant_data/src/engineroom"
 	#user app[:deploy_user]
@@ -171,26 +183,26 @@ execute 'make site available' do
   end   
 end
 
-execute 'make site available' do
-  command "sudo ln -s /etc/nginx/sites-available/local.klosters.com.au /etc/nginx/sites-enabled/local.klostersford.com.au"
-  not_if do
-    File.exists?("/etc/nginx/sites-enabled/local.klostersford.com.au")
-  end   
-end
+# execute 'make site available' do
+  # command "sudo ln -s /etc/nginx/sites-available/local.klosters.com.au /etc/nginx/sites-enabled/local.klostersford.com.au"
+  # not_if do
+    # File.exists?("/etc/nginx/sites-enabled/local.klostersford.com.au")
+  # end   
+# end
 
-execute 'make site available' do
-  command "sudo ln -s /etc/nginx/sites-available/local.klosters.com.au /etc/nginx/sites-enabled/local.klostersvolkswagen.com.au"
-  not_if do
-    File.exists?("/etc/nginx/sites-enabled/local.klostersvolkswagen.com.au")
-  end   
-end
+# execute 'make site available' do
+  # command "sudo ln -s /etc/nginx/sites-available/local.klosters.com.au /etc/nginx/sites-enabled/local.klostersvolkswagen.com.au"
+  # not_if do
+    # File.exists?("/etc/nginx/sites-enabled/local.klostersvolkswagen.com.au")
+  # end   
+# end
 
-execute 'make site available' do
-  command "sudo ln -s /etc/nginx/sites-available/local.klosters.com.au /etc/nginx/sites-enabled/local.lakevolkswagen.com.au"
-  not_if do
-    File.exists?("/etc/nginx/sites-enabled/local.lakevolkswagen.com.au")
-  end   
-end
+# execute 'make site available' do
+  # command "sudo ln -s /etc/nginx/sites-available/local.klosters.com.au /etc/nginx/sites-enabled/local.lakevolkswagen.com.au"
+  # not_if do
+    # File.exists?("/etc/nginx/sites-enabled/local.lakevolkswagen.com.au")
+  # end   
+# end
 
 # execute 'start up the thin web server' do
   # cwd "/vagrant_data/src/engineroom/"

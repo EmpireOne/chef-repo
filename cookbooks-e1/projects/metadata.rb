@@ -11,4 +11,4 @@ version          '0.1.0'
 # cookbook will install and php pased or rails based projects, hence have different
 # dependencie sets..
 
-depends "mysql"
+depends "database"
