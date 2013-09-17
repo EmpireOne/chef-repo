@@ -89,4 +89,70 @@ server {
 					break;
 			}
         }
+}		
+
+
+server {
+        listen 80;
+        server_name local.klosterhyundai.com.au;
+        access_log /vagrant_data/src/engineroom/log/access.log;
+        error_log /vagrant_data/src/engineroom/log/error.log;
+
+        root /vagrant_data/src/engineroom;
+
+        location / {
+			proxy_set_header  X-Real-IP  $remote_addr;
+			proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+			proxy_set_header Host $http_host;
+			proxy_redirect off;
+
+			if (!-f $request_filename) {
+					proxy_pass http://railsdomain;
+					break;
+			}
+        }
 }											
+
+
+server {
+        listen 80;
+        server_name local.highwayhyundai.com.au;
+        access_log /vagrant_data/src/engineroom/log/access.log;
+        error_log /vagrant_data/src/engineroom/log/error.log;
+
+        root /vagrant_data/src/engineroom;
+
+        location / {
+			proxy_set_header  X-Real-IP  $remote_addr;
+			proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+			proxy_set_header Host $http_host;
+			proxy_redirect off;
+
+			if (!-f $request_filename) {
+					proxy_pass http://railsdomain;
+					break;
+			}
+        }
+}											
+
+server {
+        listen 80;
+        server_name local.lakehyundai.com.au;
+        access_log /vagrant_data/src/engineroom/log/access.log;
+        error_log /vagrant_data/src/engineroom/log/error.log;
+
+        root /vagrant_data/src/engineroom;
+
+        location / {
+			proxy_set_header  X-Real-IP  $remote_addr;
+			proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+			proxy_set_header Host $http_host;
+			proxy_redirect off;
+
+			if (!-f $request_filename) {
+					proxy_pass http://railsdomain;
+					break;
+			}
+        }
+}											
+
