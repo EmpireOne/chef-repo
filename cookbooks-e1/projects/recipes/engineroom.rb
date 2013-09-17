@@ -31,39 +31,41 @@ end
 	# command "curl http://deploy:zaqq1590@chef.empireone.com.au/id_rsa > id_rsa"
 # end
 
-remote_file '/home/vagrant/.ssh/id_rsa' do
-  source 'https://dl.dropboxusercontent.com/s/7s09htg6mlhjgxf/id_rsa'
-  mode 00700
-  not_if do
-    File.exists?("/home/vagrant/.ssh/id_rsa")
-  end
-end
+##KNIFE-SOLo
+# remote_file '/home/vagrant/.ssh/id_rsa' do
+  # source 'https://dl.dropboxusercontent.com/s/7s09htg6mlhjgxf/id_rsa'
+  # mode 00700
+  # not_if do
+    # File.exists?("/home/vagrant/.ssh/id_rsa")
+  # end
+# end
 
-directory "/usr/local/sshwrapper" do
-  recursive true
-end
+# directory "/usr/local/sshwrapper" do
+  # recursive true
+# end
 
-cookbook_file "/usr/local/sshwrapper/wrap-ssh4git.sh" do
-  source "wrap-ssh4git.sh"
-  mode 00700
-end
+# cookbook_file "/usr/local/sshwrapper/wrap-ssh4git.sh" do
+  # source "wrap-ssh4git.sh"
+  # mode 00700
+# end
 
 
-directory "/vagrant_data/src" do
-  owner 'vagrant'
-  group 'vagrant'
-  mode 00700
-  recursive true
-  action :create
-end
+# directory "/vagrant_data/src" do
+  # owner 'vagrant'
+  # group 'vagrant'
+  # mode 00700
+  # recursive true
+  # action :create
+# end
 
-git '/vagrant_data/src/engineroom/' do
-  repository "git@git.assembla.com:engineroom.git"
-  reference "master"
-  action :sync
-  ssh_wrapper "/usr/local/sshwrapper/wrap-ssh4git.sh"
-end
+# git '/vagrant_data/src/engineroom/' do
+  # repository "git@git.assembla.com:engineroom.git"
+  # reference "master"
+  # action :sync
+  # ssh_wrapper "/usr/local/sshwrapper/wrap-ssh4git.sh"
+# end
 
+##KNIFE-SOLo
 # # Add the bundler package (even though it was added as part of the rvm[system]"
 # execute 'bundle install' do
   # command "sudo gem install bundler"
@@ -82,7 +84,6 @@ end
 # gem_package "bundler" do
 	# action :install
 # end
-
 
 
 #execute 'bundle install engineroom' do
